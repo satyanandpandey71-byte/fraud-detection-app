@@ -1,0 +1,92 @@
+[
+    {
+        "label": "streamlit",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "streamlit",
+        "description": "streamlit",
+        "detail": "streamlit",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "joblib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "joblib",
+        "description": "joblib",
+        "detail": "joblib",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "fraud_detection",
+        "description": "fraud_detection",
+        "peekOfCode": "model = joblib.load(\"fraud_detection_model.pkl\")\nst.title(\"Fraud Detection App\")\nst.markdown(\"Please enter the transaction details and use the predict button.\")\nst.divider()\ntransaction_type = st.selectbox(\"Transaction Type\", [\"PAYMENT\", \"TRANSFER\", \"CASH_OUT\",\"CASH_IN\", \"DEPOSIT\"])\namount = st.number_input(\"Amount\", min_value=0.0, value = 1000.0)\nold_balance = st.number_input(\"Old Balance, (Sender)\", min_value=0.0, value = 10000.0)\nnew_balance = st.number_input(\"New Balance, (Sender)\", min_value=0.0, value = 9000.0)\nold_balance_dest = st.number_input(\"Old Balance, (Receiver)\", min_value=0.0, value = 0.0)\nnew_balance_dest = st.number_input(\"New Balance, (Receiver)\", min_value=0.0, value = 0.0) ",
+        "detail": "fraud_detection",
+        "documentation": {}
+    },
+    {
+        "label": "transaction_type",
+        "kind": 5,
+        "importPath": "fraud_detection",
+        "description": "fraud_detection",
+        "peekOfCode": "transaction_type = st.selectbox(\"Transaction Type\", [\"PAYMENT\", \"TRANSFER\", \"CASH_OUT\",\"CASH_IN\", \"DEPOSIT\"])\namount = st.number_input(\"Amount\", min_value=0.0, value = 1000.0)\nold_balance = st.number_input(\"Old Balance, (Sender)\", min_value=0.0, value = 10000.0)\nnew_balance = st.number_input(\"New Balance, (Sender)\", min_value=0.0, value = 9000.0)\nold_balance_dest = st.number_input(\"Old Balance, (Receiver)\", min_value=0.0, value = 0.0)\nnew_balance_dest = st.number_input(\"New Balance, (Receiver)\", min_value=0.0, value = 0.0) \nif st.button(\"Predict\"):\n    input_data = pd.DataFrame([{\n        \"type\": transaction_type,\n        \"amount\": amount,",
+        "detail": "fraud_detection",
+        "documentation": {}
+    },
+    {
+        "label": "amount",
+        "kind": 5,
+        "importPath": "fraud_detection",
+        "description": "fraud_detection",
+        "peekOfCode": "amount = st.number_input(\"Amount\", min_value=0.0, value = 1000.0)\nold_balance = st.number_input(\"Old Balance, (Sender)\", min_value=0.0, value = 10000.0)\nnew_balance = st.number_input(\"New Balance, (Sender)\", min_value=0.0, value = 9000.0)\nold_balance_dest = st.number_input(\"Old Balance, (Receiver)\", min_value=0.0, value = 0.0)\nnew_balance_dest = st.number_input(\"New Balance, (Receiver)\", min_value=0.0, value = 0.0) \nif st.button(\"Predict\"):\n    input_data = pd.DataFrame([{\n        \"type\": transaction_type,\n        \"amount\": amount,\n        \"oldbalanceOrg\": old_balance,",
+        "detail": "fraud_detection",
+        "documentation": {}
+    },
+    {
+        "label": "old_balance",
+        "kind": 5,
+        "importPath": "fraud_detection",
+        "description": "fraud_detection",
+        "peekOfCode": "old_balance = st.number_input(\"Old Balance, (Sender)\", min_value=0.0, value = 10000.0)\nnew_balance = st.number_input(\"New Balance, (Sender)\", min_value=0.0, value = 9000.0)\nold_balance_dest = st.number_input(\"Old Balance, (Receiver)\", min_value=0.0, value = 0.0)\nnew_balance_dest = st.number_input(\"New Balance, (Receiver)\", min_value=0.0, value = 0.0) \nif st.button(\"Predict\"):\n    input_data = pd.DataFrame([{\n        \"type\": transaction_type,\n        \"amount\": amount,\n        \"oldbalanceOrg\": old_balance,\n        \"newbalanceOrig\": new_balance,",
+        "detail": "fraud_detection",
+        "documentation": {}
+    },
+    {
+        "label": "new_balance",
+        "kind": 5,
+        "importPath": "fraud_detection",
+        "description": "fraud_detection",
+        "peekOfCode": "new_balance = st.number_input(\"New Balance, (Sender)\", min_value=0.0, value = 9000.0)\nold_balance_dest = st.number_input(\"Old Balance, (Receiver)\", min_value=0.0, value = 0.0)\nnew_balance_dest = st.number_input(\"New Balance, (Receiver)\", min_value=0.0, value = 0.0) \nif st.button(\"Predict\"):\n    input_data = pd.DataFrame([{\n        \"type\": transaction_type,\n        \"amount\": amount,\n        \"oldbalanceOrg\": old_balance,\n        \"newbalanceOrig\": new_balance,\n        \"oldbalanceDest\": old_balance_dest,",
+        "detail": "fraud_detection",
+        "documentation": {}
+    },
+    {
+        "label": "old_balance_dest",
+        "kind": 5,
+        "importPath": "fraud_detection",
+        "description": "fraud_detection",
+        "peekOfCode": "old_balance_dest = st.number_input(\"Old Balance, (Receiver)\", min_value=0.0, value = 0.0)\nnew_balance_dest = st.number_input(\"New Balance, (Receiver)\", min_value=0.0, value = 0.0) \nif st.button(\"Predict\"):\n    input_data = pd.DataFrame([{\n        \"type\": transaction_type,\n        \"amount\": amount,\n        \"oldbalanceOrg\": old_balance,\n        \"newbalanceOrig\": new_balance,\n        \"oldbalanceDest\": old_balance_dest,\n        \"newbalanceDest\": new_balance_dest",
+        "detail": "fraud_detection",
+        "documentation": {}
+    },
+    {
+        "label": "new_balance_dest",
+        "kind": 5,
+        "importPath": "fraud_detection",
+        "description": "fraud_detection",
+        "peekOfCode": "new_balance_dest = st.number_input(\"New Balance, (Receiver)\", min_value=0.0, value = 0.0) \nif st.button(\"Predict\"):\n    input_data = pd.DataFrame([{\n        \"type\": transaction_type,\n        \"amount\": amount,\n        \"oldbalanceOrg\": old_balance,\n        \"newbalanceOrig\": new_balance,\n        \"oldbalanceDest\": old_balance_dest,\n        \"newbalanceDest\": new_balance_dest\n    }])",
+        "detail": "fraud_detection",
+        "documentation": {}
+    }
+]
